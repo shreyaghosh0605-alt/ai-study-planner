@@ -54,3 +54,18 @@ Track your subjects, identify weak topics, and get smart recommendations — all
 ## 👩‍💻 Author
 **Shreya 💖**  
 Building simple and meaningful tools to make studying smarter ✨
+
+---
+
+## 💡 Why I Built This
+As a student preparing for competitive exams, I realized that managing weak topics and staying consistent is the biggest challenge.
+
+This project is my attempt to solve that problem by creating a simple system that prioritizes weak areas and helps maintain focus.
+
+---
+
+## 🧠 Smart Logic
+The system prioritizes weak and incomplete topics to generate a focused daily study plan.
+
+## 📷 Preview
+![App Screenshot](screenshot.png)
