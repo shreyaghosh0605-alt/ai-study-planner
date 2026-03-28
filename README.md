@@ -67,6 +67,7 @@ This ensures users always focus on the most important areas.
 
 ### Task & Plan View
 ![Tasks](screenshot2.png)
+
 ---
 
 ## 🚀 Future Improvements
