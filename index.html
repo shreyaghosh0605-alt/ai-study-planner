@@ -1,28 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Study Planner</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="app-shell">
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow">Built for disciplined exam prep</p>
+        <h1>AI Study Planner</h1>
+        <p class="subhead">
+          Track weak topics, generate a daily plan, and stay consistent.
+        </p>
+      </div>
 
-    <h1>📚 AI Study Planner</h1>
+      <div class="hero-card">
+        <div class="metric-big" id="completionText">0%</div>
+        <div class="metric-label">completion</div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="container">
-        <input type="text" id="subject" placeholder="Enter Subject">
-        <input type="text" id="topic" placeholder="Enter Topic">
+    <section class="panel">
+      <div class="section-head">
+        <h2>Add a topic</h2>
+        <span class="subtle">mark each topic by strength</span>
+      </div>
+
+      <div class="form-grid">
+        <input type="text" id="subject" placeholder="Subject (e.g. Mathematics)" />
+        <input type="text" id="topic" placeholder="Topic (e.g. Probability)" />
 
         <select id="strength">
-            <option value="strong">Strong</option>
-            <option value="medium">Medium</option>
-            <option value="weak">Weak</option>
+          <option value="strong">Strong</option>
+          <option value="medium">Medium</option>
+          <option value="weak">Weak</option>
         </select>
 
-        <button onclick="addTopic()">Add</button>
-    </div>
+        <button id="addBtn" type="button">Add Topic</button>
+      </div>
+    </section>
 
-    <ul id="list"></ul>
+    <section class="cards-grid">
+      <div class="stat-card">
+        <span>Total topics</span>
+        <strong id="totalCount">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Weak topics</span>
+        <strong id="weakCount">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Completed</span>
+        <strong id="doneCount">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Strong topics</span>
+        <strong id="strongCount">0</strong>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="panel">
+      <div class="section-head">
+        <h2>Smart recommendation</h2>
+        <span class="subtle">prioritized automatically</span>
+      </div>
+      <div id="suggestionBox" class="suggestion-box"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Today’s plan</h2>
+        <div class="inline-actions">
+          <button class="ghost" id="sampleBtn" type="button">Load sample</button>
+          <button class="ghost" id="exportBtn" type="button">Export JSON</button>
+          <button class="danger" id="clearBtn" type="button">Reset</button>
+        </div>
+      </div>
+
+      <ul id="planList" class="plan-list"></ul>
+      <div id="planEmpty" class="empty-state">
+        No topics yet. Add your first chapter above.
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Your topics</h2>
+        <span class="subtle">tap “done” when you finish a topic</span>
+      </div>
+
+      <ul id="topicList" class="topic-list"></ul>
+      <div id="topicEmpty" class="empty-state">
+        Nothing here yet. Add a subject and topic to begin.
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
